@@ -6,6 +6,7 @@
   background-image: -webkit-linear-gradient(rgb(7, 65, 15), rgb(0, 3, 0));
   transition: .6s;
   z-index: 100;
+  box-shadow: 2px 0px 6px black;
 }
 #sidebar nav.expanded {
   width: 220px;
