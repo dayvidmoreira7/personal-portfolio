@@ -1,0 +1,81 @@
+#sidebar nav {
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-image: -webkit-linear-gradient(rgb(7, 65, 15), rgb(0, 3, 0));
+  transition: .6s;
+  z-index: 100;
+}
+#sidebar nav.expanded {
+  width: 220px;
+}
+#sidebar nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#sidebar nav ul div {
+  background-color: rgba(255, 255, 255, 0);
+}
+#sidebar nav ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px 17.5px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  transition: .6s;
+}
+#sidebar nav ul li.active {
+  box-shadow: 0px 0px 6px 2px rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
+}
+#sidebar nav:hover ul li:hover {
+  box-shadow: 0px 0px 6px 2px rgb(228, 228, 228);
+  background-color: rgb(228, 228, 228);
+}
+#sidebar nav ul li svg {
+  fill: rgb(228, 228, 228);
+  font-size: 26px;
+  transition: .6s;
+}
+#sidebar nav ul li.active svg {
+  fill: rgb(7, 65, 15);
+}
+#sidebar nav:hover ul li:hover svg {
+  fill: rgb(7, 65, 15);
+}
+#sidebar nav ul li .nav-label {
+  color: rgb(228, 228, 228);
+  font-size: 14px;
+  opacity: 0;
+  transition: .4s ease-in-out;
+  margin-left: 30px;
+  transform: translateX(-60px);
+}
+#sidebar nav.expanded ul li .nav-label {
+  opacity: 1;
+  transform: scaleX(1) translateX(0px);
+}
+#sidebar nav ul li.active .nav-label {
+  color: rgb(7, 65, 15);
+}
+#sidebar nav:hover ul li:hover .nav-label {
+  color: rgb(7, 65, 15);
+}
+
+#sidebar nav:hover ul li.collapse:hover {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: none;
+}
+#sidebar nav:hover ul li.collapse:hover svg {
+  fill: white;
+}
+#sidebar nav:hover ul li.collapse:hover .nav-label {
+  color: white;
+}
