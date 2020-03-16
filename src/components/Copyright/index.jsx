@@ -4,7 +4,7 @@ import './styles.css';
 const Copyright = () => {
   return (
     <div id="copyright">
-      Copyright © {new Date().getFullYear()} Dayvid Montovanelli Moreira
+      Copyright © {new Date().getFullYear()} | Dayvid Montovanelli Moreira
     </div>
   );
 }

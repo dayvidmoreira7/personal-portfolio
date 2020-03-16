@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+// import {
+
+// } from 'antd';
 import {
   HomeOutlined,
   UserOutlined,
@@ -27,7 +30,6 @@ const SideBar = ({
   const [expanded, setExpanded] = useState(
     localStorage.getItem('menu') === '0' ? false : true
   );
-  console.log(expanded);
   return (
     <div id="sidebar">
       <nav className={`${expanded && 'expanded'}`}>
@@ -38,9 +40,14 @@ const SideBar = ({
                 name,
                 value,
                 path,
-                icon
+                icon,
               }) => (
-                <li className={activeTab === value && 'active'} onClick={() => history.push(path)}>
+                <li
+                  title={!expanded && name}
+                  className={activeTab === value ? 'active' : ''}
+                  onClick={() => history.push(path)}
+                  key={value}
+                >
                   {icon}
                   <span className="nav-label">{name}</span>
                 </li>

@@ -3,12 +3,9 @@
   left: 0;
   width: 80px;
   height: 100vh;
-  background-image: -webkit-linear-gradient(rgb(7, 65, 15), rgb(0, 3, 0));
-  transition: .6s;
+  background-image: -webkit-linear-gradient(right ,#1a1a1a, #2b2b2b);
+  transition: .7s;
   z-index: 100;
-}
-#sidebar nav.expanded {
-  width: 220px;
 }
 #sidebar nav ul {
   display: flex;
@@ -23,55 +20,56 @@
 }
 #sidebar nav ul li {
   list-style: none;
+  background-color: #1a1a1a;
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 16px 17.5px;
-  margin: 10px 10px;
-  border-radius: 10px;
-  transition: .6s;
+  padding: 14px 17px;
+  margin: 12px 10px;
+  /* border: 1px solid rgb(51, 51, 51); */
+  border-radius: 14px;
+  box-shadow: 4px 4px 14px 0px black;
+  transition: .3s;
 }
-#sidebar nav ul li.active {
-  box-shadow: 0px 0px 6px 2px rgb(228, 228, 228);
-  background-color: rgb(228, 228, 228);
-}
-#sidebar nav:hover ul li:hover {
-  box-shadow: 0px 0px 6px 2px rgb(228, 228, 228);
-  background-color: rgb(228, 228, 228);
+#sidebar nav ul li:hover {
+  box-shadow: 0px 0px 6px 0px black;
 }
 #sidebar nav ul li svg {
   fill: rgb(228, 228, 228);
   font-size: 26px;
-  transition: .6s;
-}
-#sidebar nav ul li.active svg {
-  fill: rgb(7, 65, 15);
-}
-#sidebar nav:hover ul li:hover svg {
-  fill: rgb(7, 65, 15);
+  transition: .3s;
 }
 #sidebar nav ul li .nav-label {
   color: rgb(228, 228, 228);
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0;
-  transition: .4s ease-in-out;
+  transition: .3s ease-in-out;
   margin-left: 30px;
-  transform: translateX(-60px);
+  transform: translateX(-60px) rotateY(90deg);
+}
+
+#sidebar nav ul li.active {
+  box-shadow: inset 0px 6px 20px 0px black;
+  background-color: rgba(0, 0, 0, 0);
+}
+#sidebar nav ul li.active svg {
+  fill: rgb(104, 104, 104);
+}
+#sidebar nav ul li.active .nav-label {
+  color: rgb(146, 146, 146);
+}
+
+#sidebar nav.expanded {
+  width: 220px;
 }
 #sidebar nav.expanded ul li .nav-label {
   opacity: 1;
-  transform: scaleX(1) translateX(0px);
-}
-#sidebar nav ul li.active .nav-label {
-  color: rgb(7, 65, 15);
-}
-#sidebar nav:hover ul li:hover .nav-label {
-  color: rgb(7, 65, 15);
+  transform: translateX(0px) rotateY(0deg);
 }
 
-#sidebar nav:hover ul li.collapse:hover {
-  background-color: rgba(255, 255, 255, 0);
-  box-shadow: none;
+#sidebar nav ul li.collapse {
+  box-shadow: 0px 6px 20px 0px black;
+
 }
 #sidebar nav:hover ul li.collapse:hover svg {
   fill: white;
