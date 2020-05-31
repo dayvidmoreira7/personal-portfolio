@@ -29,6 +29,9 @@ const Home = () => {
       <CarouselButtons carousel={carouselRef} />
       <Carousel
         infinite
+        slidesToShow={1}
+        centerPadding="120px"
+        centerMode
         speed={300}
         ref={(c) => { setCarouselRef(c); }}
       >
