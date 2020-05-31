@@ -29,7 +29,6 @@ const Home = () => {
       <CarouselButtons carousel={carouselRef} />
       <Carousel
         infinite
-        effect="fade"
         speed={300}
         ref={(c) => { setCarouselRef(c); }}
       >
