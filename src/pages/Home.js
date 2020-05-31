@@ -28,28 +28,39 @@ const Home = () => {
     <>
       <CarouselButtons carousel={carouselRef} />
       <Carousel
+        // appendDots={(dots) => (
+        //   <div>
+        //     <div
+        //       style={{
+        //         position: 'absolute',
+        //         transform: 'translateY(-34px)',
+        //         color: 'white',
+        //         backgroundColor: '#009900',
+        //         width: 114,
+        //         height: 24,
+        //         borderRadius: 8,
+        //         boxShadow: '0px 0px 6px 1px #00000088',
+        //         display: 'flex',
+        //         justifyContent: 'center',
+        //       }}
+        //     >
+        //       Experiências
+        //     </div>
+        //     {dots}
+        //   </div>
+        // )}
         infinite
         slidesToShow={1}
         centerPadding="120px"
         centerMode
-        speed={300}
+        speed={500}
         ref={(c) => { setCarouselRef(c); }}
       >
-        <div>
-          <Initial />
-        </div>
-        <div>
-          <About />
-        </div>
-        <div>
-          <Skills />
-        </div>
-        <div>
-          <Experiences />
-        </div>
-        <div>
-          <Contacts />
-        </div>
+        <Initial />
+        <About />
+        <Skills />
+        <Experiences />
+        <Contacts />
       </Carousel>
     </>
   );
