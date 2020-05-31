@@ -1,32 +1,17 @@
-import { useEffect, useState } from 'react';
+const detectMouseWheelDirection = (e) => {
+  var delta = null;
+  var direction = false;
 
-export default {
-  useWindowSize: () => {
-    const isClient = typeof window === 'object';
+  if (!e) e = window.event;
+
+  if (e.wheelDelta) delta = e.wheelDelta / 60;
+  else if (e.detail) delta = -e.detail / 2;
   
-    function getSize() {
-      return {
-        width: isClient ? window.innerWidth : undefined,
-        height: isClient ? window.innerHeight : undefined
-      };
-    }
-  
-    const [windowSize, setWindowSize] = useState(getSize);
-  
-    useEffect(() => {
-      if (!isClient) {
-        return false;
-      }
-      
-      function handleResize() {
-        setWindowSize(getSize());
-      }
-  
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-      // eslint-disable-next-line
-    }, []); // Empty array ensures that effect is only run on mount and unmount
-  
-    return windowSize;
-  },
+  if (delta !== null) direction = delta > 0 ? 'up' : 'down';
+
+  return direction;
+}
+
+export {
+  detectMouseWheelDirection,
 };
