@@ -6,17 +6,17 @@ const Initial = () => {
   return (
     <div id="initial" className="content">
       <Row justify="center">
-        <Col span={24} style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'column', lineHeight: 0.9, marginTop: 20 }}>
+        <Col span={24} className="title" style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'column', lineHeight: 0.9, marginTop: 20 }}>
           <div>
-            <span style={{ WebkitTextStroke: '1px #009900', color: 'white', fontSize: 30, fontWeight: 'bold' }}>
+            <span style={{ textShadow: '0 0 4px #006600', color: 'white', fontSize: 30, fontWeight: 'bold' }}>
               bem-vindo!
             </span>
           </div>
           <div style={{ display: 'flex' }}>
-            <span style={{ WebkitTextStroke: '1px #009900', color: 'white', fontSize: 30, fontWeight: 'bold', marginRight: 6 }}>
+            <span style={{ textShadow: '0 0 4px #006600', color: 'white', fontSize: 30, fontWeight: 'bold', marginRight: 6 }}>
               sou
             </span>
-            <span style={{ color: '#009900', fontSize: 50, fontWeight: '700' }}>
+            <span style={{ color: '#006600', fontSize: 50, fontWeight: '700', textShadow: '2px 1px 6px #00000088' }}>
               DAYVID MONTOVANELLI MOREIRA
             </span>
           </div>
@@ -30,10 +30,10 @@ const Initial = () => {
             tecnologias como Javascript, React-Native, ReactJS, NodeJS, Python
           </span>
         </Col>
-        <Divider style={{ marginTop: 40 }} />
+        <Divider style={{ marginTop: 30 }} />
       </Row>
       <Row align="middle" justify="center">
-        <Col style={{ marginTop: 20 }}>
+        <Col style={{ marginTop: 10 }}>
           <Avatar src={Perfil} style={{ width: 330, height: 330 }} /> 
         </Col>
       </Row>
