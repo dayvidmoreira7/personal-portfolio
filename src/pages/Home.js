@@ -15,6 +15,7 @@ import { detectMouseWheelDirection } from '../util';
 
 const Home = () => {
   const [carouselRef, setCarouselRef] = useState();
+  const [mobile, setMobile] = useState(window.innerWidth < 768);
   useEffect(() => {
     window.addEventListener('wheel', (e) => {
       const direction = detectMouseWheelDirection(e);
@@ -23,6 +24,9 @@ const Home = () => {
         if (direction === 'up') carouselRef.prev();
       }
     });
+    window.addEventListener('resize', () => {
+      setMobile(window.innerWidth < 768);
+    })
   }, [carouselRef]);
   return (
     <>
@@ -51,8 +55,8 @@ const Home = () => {
         // )}
         infinite
         slidesToShow={1}
-        centerPadding="120px"
-        centerMode
+        centerPadding={mobile ? null : '120px'}
+        centerMode={!mobile}
         speed={500}
         ref={(c) => { setCarouselRef(c); }}
       >
